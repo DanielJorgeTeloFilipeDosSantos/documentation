@@ -41,7 +41,7 @@
 
         <div class='main'>
             <h3>index.js</h3>
-            <p>const express = require('express')</p>
+                <p>const express = require('express')</p>
                     <p>const hbs     = require('hbs');</p>
                     <p>const path    = require('path');</p>
                     <p>const app = express()</p>
@@ -59,12 +59,10 @@
                     <p>app.use('/', indexRouter);</p>
                     <p>app.use('/register', registerRouter);</p>
                     <p>app.use('/signin', signinRouter);</p>
-                    
-                    
-                    
-                    
-                    
                     <p>app.listen(port, () => console.log(`Example app listening on port ${port}!`))</p>
+
+                    <h4>package.json scripts</h4>
+                    <p>"dev": "nodemon index.js"</p>
         </div>
 
     
