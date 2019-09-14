@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+
+        <div class="btn-group-vertical position-fixed">
+                <a type="link" href='./index.html' class="btn btn-secondary">index.js</a>
+                <a type="link" href='./packages.html'  class="btn btn-secondary">pakages</a>
+                <a type="link" href='./hbs.html' class="btn btn-secondary">hbs</a>
+                <a type="link" href='./routes.html' class="btn btn-secondary">routes</a>
+                <a type="link" href='' class="btn btn-secondary">Bootstrap</a>
+                <a type="link" href='' class="btn btn-secondary">mongodb</a>
+                <a type="link" href='' class="btn btn-secondary">mongoose</a>
+                <a type="link" href='./bcrypt.html' class="btn btn-secondary">bcrypt</a>
+                <a type="link" href='' class="btn btn-secondary">passport</a>
+                <a type="link" href='' class="btn btn-secondary">authorization</a>
+                <a type="link" href='' class="btn btn-secondary">1</a>
+                <a type="link" href='' class="btn btn-secondary">2</a>
+                <a type="link" href='' class="btn btn-secondary">1</a>
+                <a type="link" href='' class="btn btn-secondary">2</a>
+                <a type="link" href='' class="btn btn-secondary">1</a>
+                <a type="link" href='' class="btn btn-secondary">2</a>
+                <a type="link" href='' class="btn btn-secondary">1</a>
+                <a type="link" href='' class="btn btn-secondary">2</a>
+                <a type="link" href='' class="btn btn-secondary">1</a>
+                <a type="link" href='' class="btn btn-secondary">2</a>
+                <a type="link" href='' class="btn btn-secondary">1</a>
+                <a type="link" href='' class="btn btn-secondary">2</a>
+            </div>
+
+
+        <div class='main'>
+            <h3>index.js</h3>
+            <p>const express = require('express')</p>
+                    <p>const hbs     = require('hbs');</p>
+                    <p>const path    = require('path');</p>
+                    <p>const app = express()</p>
+                    <p>const port = 3000</p>
+                    
+                    <p>app.set('view engine', 'hbs');</p>
+                    <p>app.set('views', __dirname + '/views');</p>
+                    <p>hbs.registerPartials(__dirname + '/views/partials')</p>
+                    <p>app.use(express.static(path.join(__dirname, 'public')));</p>
+                    
+                    <p>const indexRouter = require('./routes/index');</p>
+                    <p>const registerRouter = require('./routes/register');</p>
+                    <p>const signinRouter = require('./routes/signin');</p>
+                    
+                    <p>app.use('/', indexRouter);</p>
+                    <p>app.use('/register', registerRouter);</p>
+                    <p>app.use('/signin', signinRouter);</p>
+                    
+                    
+                    
+                    
+                    
+                    <p>app.listen(port, () => console.log(`Example app listening on port ${port}!`))</p>
+        </div>
+
+    
+
+</body>
+</html>

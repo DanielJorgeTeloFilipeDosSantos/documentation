@@ -1,0 +1,19 @@
+.main{
+    float:right;
+    width:90vw;
+    height:100%;
+    
+}
+.main p{
+    margin:0;
+}
+
+h3{
+    color:red;
+    padding:5px;
+}
+h4{
+    color:lightseagreen;
+    padding:5px;
+    padding-top:50px;
+}
