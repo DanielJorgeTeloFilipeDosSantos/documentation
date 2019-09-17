@@ -46,6 +46,28 @@
         <div class='main'>
             <h3>Heroku cloud deploy</h3>
 
+            <p>git init</p>
+            <p>dar push para o github</p>
+
+            <p>heroku create unique-project-name</p>
+
+            <p>git remote -v</p>
+
+            <p>git add .</p>
+            <p>git commit -a -m"new"</p>
+            <p>git push heroku master</p>
+
+            <p>heroku ps:scale web=1</p>
+
+            <p>Set up your Production Database</p>
+            <p>Create a database to host your production data:</p>
+            <p>$ heroku addons:create mongolab:sandbox</p>
+            <p>If you haven’t already, make sure your app.js or server.js file has the correct line of code to connect to your production DB:</p>
+            <p>// app.js or server.js</p>
+            <p>// connect Mongoose to your DB</p>
+            <p>var mongoose = require(‘mongoose’);</p>
+            <p>mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/your-app-name');</p>
+
 
 
 
