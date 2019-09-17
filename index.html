@@ -45,6 +45,7 @@
                 <p>const express = require('express')</p>
                     <p>const hbs     = require('hbs');</p>
                     <p>const path    = require('path');</p>
+                    <p>const bodyParser = require('body-parser')</p>
                     <p>const app = express()</p>
                     <p>const port = 3000</p>
                     
@@ -52,6 +53,8 @@
                     <p>app.set('views', __dirname + '/views');</p>
                     <p>hbs.registerPartials(__dirname + '/views/partials')</p>
                     <p>app.use(express.static(path.join(__dirname, 'public')));</p>
+
+                    <p>app.use(bodyParser.urlencoded({extended: true}));</p>
                     
                     <p>const indexRouter = require('./routes/index');</p>
                     <p>const registerRouter = require('./routes/register');</p>
