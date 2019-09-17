@@ -76,12 +76,14 @@
             <p>require('dotenv').config()</p>
 
             <h4>configure Port settings</h4>
+            <p>const port = process.env.PORT || 3000;</p>
+            <p>app.listen(port);</p>
+            <p>// the code above should be directly above: 'module.exports = app;'</p>
 
 
             <h4>push .evn variables to heroku</h4>
 
-            <a href="https://medium.com/make-school/how-to-deploy-your-node-js-mongodb-app-to-the-web-using-heroku-63d4bccf2675
-            " class="">put the site in heroku link for help</a><br><br>
+            <a href="https://medium.com/make-school/how-to-deploy-your-node-js-mongodb-app-to-the-web-using-heroku-63d4bccf2675" class="">put the site in heroku link for help</a><br><br>
             <p>https://your-app-name.herokuapp.com/</p>
             <br>
             <p>heroku logs --tail</p>
