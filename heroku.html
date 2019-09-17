@@ -60,7 +60,7 @@
             <p>git push heroku master</p>
 
             <h4>put the script in package.json</h4>
-            <p>"start": "node ./server"</p>
+            <p>"start": "node index.js"</p>
             <br>
 
             <h4>Spin up a server</h4>
@@ -68,7 +68,8 @@
 
             <h4>Set up a database</h4>
             <p>const mongoose = require(‘mongoose’);</p>
-            <p>mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/your-app-name')</p>
+            <p>mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/your-app-name',</p>
+            <p>{useNewUrlParser: true, useUnifiedTopology: true}))</p>
             <br>
             <p>//note: npm i dotenv</p>
             <br>
@@ -89,7 +90,7 @@
             <p>$ git push heroku master</p>
 
             <h4>push .evn variables to heroku</h4>
-            <p>https://dashboard.heroku.com/apps/YOUR_APP_NAME/settings and provide .env variables via Heroku’s web interface.</p>
+            <p>https://dashboard.heroku.com/apps/YOUR_APP_NAME/settings</p>
 
 
 
