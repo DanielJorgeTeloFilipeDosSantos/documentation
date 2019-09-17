@@ -45,23 +45,21 @@
             
         <div class='main'>
             <h3>Heroku cloud deploy</h3>
-            <br>
+            <h4>push github</h4>
             <p>git init</p>
             <p>dar push para o github</p>
-            <br>
+            <h4>create unique project name</h4>
             <p>heroku create unique-project-name</p>
             <br>
             <p>git remote -v</p>
-            <br>
+            <h4>push to heroku</h4>
             <p>git add .</p>
             <p>git commit -a -m"new"</p>
             <p>git push heroku master</p>
             <br>
             <p>heroku ps:scale web=1</p>
             <br>
-            <p>Set up your Production Database</p>
-            <p>Create a database to host your production data:</p>
-            <br>
+            <h4>Set up  Database</h4>
             <p>heroku addons:create mongolab:sandbox</p>
             <br>
             <p>If you haven’t already, make sure your app.js or server.js file has the correct line of code to connect to your production DB:</p>
