@@ -48,7 +48,7 @@
                     <p>const bodyParser = require('body-parser')</p>
                     <p>const app = express()</p>
                     <p>const port = 3000</p>
-                    
+                    <br>
                     <p>app.set('view engine', 'hbs');</p>
                     <p>app.set('views', __dirname + '/views');</p>
                     <p>hbs.registerPartials(__dirname + '/views/partials')</p>
@@ -59,12 +59,12 @@
                     <p>const indexRouter = require('./routes/index');</p>
                     <p>const registerRouter = require('./routes/register');</p>
                     <p>const signinRouter = require('./routes/signin');</p>
-                    
+                    <br>
                     <p>app.use('/', indexRouter);</p>
                     <p>app.use('/register', registerRouter);</p>
                     <p>app.use('/signin', signinRouter);</p>
                     <p>app.listen(port, () => console.log(`Example app listening on port ${port}!`))</p>
-
+                    
                     <h4>package.json scripts</h4>
                     <p>"dev": "nodemon index.js"</p>
         </div>
