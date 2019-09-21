@@ -97,6 +97,28 @@
         <h4>sign up</h4>
 
 
+        <p>    router.post('/register', (req,res)=> {</p>
+        
+        <p>        const newUser = new User({</p>
+        <p>            name: req.body.name,</p>
+        <p>            password: req.body.password,</p>
+        <p>            foto: req.body.foto,</p>
+        <p>            convites: req.body.convites,</p>
+        <p>            amigos: req.body.amigos,</p>
+        <p>            privados: req.body.privados,</p>
+        <p>            
+        <p>        });</p>
+        
+        <p>        newUser</p>
+        <p>        .save()</p>
+        <p>        .then(user => res.json(user))</p>
+        <p>        .catch(err=> console.log(err))</p>
+        
+        
+        <p>    }</p>
+        <p>)</p>
+
+
 
 
 
