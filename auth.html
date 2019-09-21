@@ -53,9 +53,36 @@
 
 
     <div class='main'>
+        <h4>authorization and basic signup, signin</h4>
 
+        <h3>session</h3>
 
-        <h4>authorization</h4>
+        <p>const cookieParser = require('cookie-parser');</p>
+        <br>
+        <br>
+
+        <p>app.use(logger('dev'));</p>
+        <p>app.use(express.json());</p>
+        <p>app.use(express.urlencoded({ extended: false }));</p>
+        <p>app.use(cookieParser());</p>
+        <p>app.use(expressSession({</p>
+        <p>secret: process.env.SESSION_SECRET,</p>
+        <p>cookie: { maxAge: 60 * 60 * 24 * 1000 },</p>
+        <p>resave: true,</p>
+        <p>saveUninitialized: false,</p>
+        <p>store: new MongoStore({</p>
+        <p>    mongooseConnection: mongoose.connection,</p>
+        <p>    ttl: 24 * 60 * 60</p>
+        <p>})</p>
+        <p>}));</p>
+
+        <p>// Custom piece of middleware</p>
+        <p>app.use((req, res, next) => {</p>
+        <p>// Access user information from within my templates</p>
+        <p>res.locals.user = req.session.user;</p>
+        <p>// Keep going to the next middleware or route handler</p>
+        <p>next();</p>
+        <p>});</p>
 
 
 
