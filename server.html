@@ -117,6 +117,34 @@
 
         <h4>//routes</h4>
         <p>do the routes in the routes users.js</p>
+        <br>
+
+        <h4>//passport config</h4>
+        <p>const JwtStrategy = require('passport-jwt').Strategy;</p>
+        <p>const ExtractJwt = require('passport-jwt').ExtractJwt;</p>
+        <p>const mongoose = require('mongoose')</p>
+        <p>const User = mongoose.model('users')</p>
+        <p>const keys = require('../config/keys')</p>
+
+        <p>const opts = {};</p>
+        <p>opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();</p>
+        <p>opts.secretOrKey = keys.secretOrKey;</p>
+
+        <p>module.exports = passport => {</p>
+        <p>    passport.use(new JwtStrategy(opts, (jwt_payload, done)=> {</p>
+        <p>        User.findById(jwt_payload.id)</p>
+        <p>            .then(user =>{</p>
+        <p>            if(user){</p>
+        <p>                return done(null,user)</p>
+        <p>            } </p>
+        <p>                return done(null, false)</p>
+        <p>        })</p>
+        <p>        .catch(err=> console.log(err))</p>
+        <p>            
+        <p>    })</p>
+        <p>);</p>
+        <p>}</p>
+        
 
 
 
