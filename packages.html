@@ -85,7 +85,7 @@
         <br>
         <p>mkdir config routes models</p>
         <br>
-        <p>touch index.js</p>
+        <p>touch server.js</p>
         <br>
         <p>cd my-app </p>
         <p>npm i react-router-dom axios jwt-decode react-redux redux redux-logger redux-thunk</p>
@@ -93,6 +93,25 @@
         <p>npm i -D nodemon</p>
         <br>
         <p>mkdir actionTypes actionCreators components containers reducers api styles UiMaterial utils</p>
+
+        <h4>server-side package.json</h4>
+
+        <p>"scripts": {</p>
+        <p>    "start": "node server.js",</p>
+        <p>    "server": "nodemon server.js",</p>
+        <p>    "client-install": "npm install --prefix client",</p>
+        <p>    "client": "npm start --prefix my-app",</p>
+        <p>    "dev": "concurrently \"npm run server\" \"npm run client\""</p>
+        <p>  },</p>
+
+        <h4>React package.json</h4>
+
+        <p>"scripts": {</p>
+        <p>    "start": "react-scripts start",</p>
+        <p>    "build": "react-scripts build",</p>
+        <p>    "test": "react-scripts test",</p>
+        <p>    "eject": "react-scripts eject"</p>
+        <p>  },</p>
 
 
 
