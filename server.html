@@ -223,6 +223,20 @@
                 <h4>set up redux</h4>
                 <p>set up redux</p>
 
+                <h4>create a setAuthToken.js in utils</h4>
+                <p>import axios from 'axios';</p></p>
+
+                <p>const setAuthToken = token => {</p>
+                <p>if (token) {</p>
+                <p>    axios.defaults.headers.common['Authorization'] = token;</p>
+                <p>} else {</p>
+                <p>    delete axios.defaults.headers.common['Authorization'];</p>
+                <p>}</p>
+                <p>};</p>
+
+                <p>export default setAuthToken;</p>
+                
+
 
 
 
