@@ -122,6 +122,10 @@
       <p>}</p>
       <br />
       <br />
+
+      <h4>method</h4>
+      <p>method(){</p>
+      <p>}</p>
       <p>in render:</p>
       <p>const person = this.state.person</p>
       <p>to use, ex {person.name}</p>
@@ -129,7 +133,35 @@
       <h4>change state</h4>
       <p>this.setState({...this.state.person, something})</p>
       <p>this.method = this.method.bind(this);</p>
+      <hr>
+      <h4>react forms</h4>
+      constructor(){
+        super();
+        this.state ={
+          name: 'da',
+          age: 36,
+          profession: 'ld',
+          reportsTo: null
+        }
+      }
+      <h4>do inputs, default or default</h4>
+      <p>do the input</p>
+      <h4>add onChange</h4>
+      <p>onChange={this.handleNameChange</p>
+      <h4>handleNameChange(event){
+        this.setState({
+          name: event.target.value
+        })
+      }
+      </h4>
+      <h4>bind the method</h4>
+      <p>this.method = this.method.bind(this);</p>
 
+      <hr>
+
+
+      <h4>teneraries</h4>
+      
       <br />
       <br />
     </div>
