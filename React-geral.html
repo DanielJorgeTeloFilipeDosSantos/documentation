@@ -196,6 +196,14 @@
       <h4>condicional</h4>
       <p>{this.state.form && &lt;component/>}</p>
 
+      <h4>search</h4>
+      <p>change the query, filter </p>
+      <p>get matched(){</p>
+      <p>  const query= this.state.query</p>
+      <p>  cosnt foodList = this.state.foodlist</p>
+      <p>  return foodList.filter(food=> food.anme.toLowerCase(.includes(query.toLowerCase())))</p>
+      <p>}</p>
+
       <br />
       <br />
     </div>
