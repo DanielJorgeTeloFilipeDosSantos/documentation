@@ -108,10 +108,29 @@
       <p>}</p>
       <hr>
 
-      <h4>state and props</h4>
-      <p>asas</p>
-      <h4>mapping</h4>
+      <h3>From Parent to Child Using Props</h3>
+      <p>&lt;Child2 dataFromParent = {this.state.data} /></p>
+      <br>
+      <p>The data from parent is:{this.props.dataFromParent}</p>
+
+
+      <h3>Passing props From Child to Parent Using Callbacks</h3>
+      <p>Step 1: Define a callback function that takes in a parameter which we consider having accessed from the child in the Parent.js</p>
+      <p>Step 2: Also, send the defined callback function as a props to the Child1.js</p>
+
+
+
+
+
+
+
+
+
+
+
+      <h3>mapping</h3>
       <p>div {students.map(student => (&lt;component props={props} key={item.name}/>))} div</p>
+
 
       <h4>state</h4>
       <p>constructor(){</p>
