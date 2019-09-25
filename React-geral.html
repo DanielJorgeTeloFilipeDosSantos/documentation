@@ -127,6 +127,20 @@
         <br><br>
       <p>&lt;Child1 parentCallback = {this.callbackFunction}/></p>
 
+      <br><br>
+
+      <p><b>Step 3:</b> In Child1.js send the data using this.props.callback(dataToParent)</p>
+
+      <br><br>
+
+      <p>      sendData = () => {</p>
+      <p>        this.props.parentCallback("Hey Popsie, How’s it going?");</p>
+      <p>   },</p>
+      <p>render() { </p>
+      <p>//you can call function sendData whenever you'd like to send data from child component to Parent component.</p>
+      <p>   }</p>
+
+
 
 
 
