@@ -1,18 +1,18 @@
-.main{
-    float:right;
-    width:90vw;
-    height:100%;
-    
+.main {
+  float: right;
+  width: 90vw;
+  height: 100%;
 }
-.main p{
-    margin:0;
+.main p {
+  margin: 0;
 }
-h3{
-    color:lightseagreen;
-    padding:5px;
+h3 {
+  color: lightseagreen;
+  padding: 5px;
+  padding-top: 50px;
 }
-h4{
-    color:orange;
-    padding:5px;
-    padding-top:50px;
+h4 {
+  color: orange;
+  padding: 5px;
+  padding-top: 50px;
 }
