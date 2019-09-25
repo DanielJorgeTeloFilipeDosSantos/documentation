@@ -109,7 +109,7 @@
       <h4>state and props</h4>
       <p>asas</p>
       <h4>mapping</h4>
-      <p>div {students.map(student => (<component props={props} key={item.name}/>))} div</p>
+      <p>div {students.map(student => (&lt;component props={props} key={item.name}/>))} div</p>
 
       <h4>state</h4>
       <p>constructor(){</p>
@@ -172,8 +172,24 @@
       <p>componentDidUpdate(){}</p>
       <p>componentWillUnmount(){}</p>
 
+      <h4>toggle</h4>
+      <p>make the state {form: true}</p>
+<br>
+      <p>togle (){</p>
+      <p>  this.setActive({</p>
+      <p>    form: !this.state.form</p>
+      <p>  })</p>
+      <p>}</p>
+<br>
+      <p>this.method = this.method.bind(this);</p>
+      <br>
+      <p>do the component condicional</p>
 
-      <h4>teneraries</h4>
+
+
+
+      <h4>condicional</h4>
+      <p>{this.state.form && &lt;component/>}</p>
 
       <br />
       <br />
