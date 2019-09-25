@@ -116,7 +116,16 @@
 
       <h3>Passing props From Child to Parent Using Callbacks</h3>
       <p>Step 1: Define a callback function that takes in a parameter which we consider having accessed from the child in the Parent.js</p>
+      <br><br>
+      
+      <p>callbackFunction = (childData) => {</p>
+        <p>  this.setState({message: childData})</p>
+        <p>}</p>
+        
+        <br><br>
+        
       <p>Step 2: Also, send the defined callback function as a props to the Child1.js</p>
+      <p>&lt;Child1 parentCallback = {this.callbackFunction}/></p>
 
 
 
