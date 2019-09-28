@@ -274,6 +274,14 @@
       <p>  mapStateToProps,</p>
       <p>  { registerUser }</p>
       <p>)(withRouter(Signup2));</p>
+
+      <h4>do the axios connection to route</h4>
+      <p>// Register User</p>
+      <p>export const registerUser = (userData, history) => dispatch => {</p>
+      <p>  axios</p>
+      <p>    .post("/api/users/register", userData)</p>
+      <p>    .then(res => history.push("/login"));</p>
+      <p>};</p>
     </div>
   </body>
 </html>
