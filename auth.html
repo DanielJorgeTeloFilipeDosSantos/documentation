@@ -280,8 +280,146 @@
       <p>export const registerUser = (userData, history) => dispatch => {</p>
       <p>  axios</p>
       <p>    .post("/api/users/register", userData)</p>
+      <p>    .then(res => history.push("/signin"));</p>
+      <p>};</p>
+
+      <hr>
+
+      <h3>sign in with auth</h3>
+
+      <h4>sign up route</h4>
+
+      <p>const bcrypt = require("bcrypt");</p>
+      <p>const User = require("../models/users");</p>
+      <br />
+      <p>router.post("/register", (req, res) => {</p>
+      <p>User.findOne({ email: req.body.email }).then(user => {</p>
+      <p>if (user) {</p>
+      <p>
+        return res.status(404).json({ email: "email already exists ma man" });
+      </p>
+      <p>} else {</p>
+      <p>const newUser = new User({</p>
+      <p>name: req.body.name,</p>
+      <p>email: req.body.email,</p>
+      <p>password: req.body.password</p>
+      <p>});</p>
+      <p></p>
+      <p>bcrypt.genSalt(10, (err, salt) => {</p>
+      <p>bcrypt.hash(newUser.password, salt, (err, hash) => {</p>
+      <p>if (err) throw err;</p>
+      <p>newUser.password = hash;</p>
+      <p>newUser</p>
+      <p>.save()</p>
+      <p>.then(user => res.json(user))</p>
+      <p>.catch(err => console.log(err));</p>
+      <p>});</p>
+      <p>});</p>
+      <p>}</p>
+      <p>});</p>
+      <p>});</p>
+
+      <h3>do the component</h3>
+
+      <h4>do the state</h4>
+      <p>constructor() {</p>
+      <p>super();</p>
+      <p>this.state = {</p>
+      <p>name: "",</p>
+      <p>email: "",</p>
+      <p>password: "",</p>
+      <p>password2: ""</p>
+      <p>};</p>
+      <p>}</p>
+
+      <h4>Link the input to the state</h4>
+      <p>value={this.state.name}</p>
+
+      <h4>do the onChange</h4>
+      <p><b>step1: do the function</b></p>
+      <p>onChange = e => {</p>
+      <p>this.setState({ [e.target.name]: e.target.value });</p>
+      <p>};</p>
+      <br />
+      <br />
+      <p><b>step2: bind the function</b></p>
+      <p>this.onChange = this.onChange.bind(this);</p>
+      <br />
+      <br />
+      <p><b>step3: Link the function to input</b></p>
+      <p>onChange={this.onChange}</p>
+
+      <h4>do the onSubmit</h4>
+      <p><b>step1: do the function</b></p>
+
+      <p>onSubmit = e => {</p>
+      <p>  e.preventDefault();</p>
+
+      <p>  const newUser = {</p>
+      <p>    name: this.state.name,</p>
+      <p>    email: this.state.email,</p>
+      <p>    password: this.state.password,</p>
+      <p>    password2: this.state.password2</p>
+      <p>  };</p>
+
+      <p>  console.log(this.state);</p>
+
+      <p>  this.props.registerUser(newUser, this.props.history);</p>
+      <p>  this.props.history.push("/");</p>
+      <p>};</p>
+
+      <br />
+      <br />
+      <p><b>step2: bind the function</b></p></p>
+      <p>this.onSubmit = this.onSubmit.bind(this);</p></p>
+      <br />
+      <br />
+      <p><b>step3: Link the function to input</b></p></p>
+      <p>onSubmit={this.onSubmit}</p></p>
+
+      <h4>do the redux reducer,actioncreator,actiontype</h4>
+      <p>import isEmpty from '../validation/is-empty';</p>
+
+      <p>import { SET_CURRENT_USER } from '../actions/types';</p>
+
+      <p>const initialState = {</p>
+      <p>  isAuthenticated: false,</p>
+      <p>  user: {}</p>
+      <p>};</p>
+
+      <p>export default function(state = initialState, action) {</p>
+      <p>  switch (action.type) {</p>
+      <p>    case SET_CURRENT_USER:</p>
+      <p>      return {</p>
+      <p>        ...state,</p>
+      <p>        isAuthenticated: !isEmpty(action.payload),</p>
+      <p>        user: action.payload</p>
+      <p>      };</p>
+      <p>    default:</p>
+      <p>      return state;</p>
+      <p>  }</p>
+      <p>}</p>
+      <h4>do the action inside the onSubmit</h4>
+      <p>this.props.registerUser(newUser, this.props.history);</p>
+      <h4>connect component to redux</h4>
+      <p>const mapStateToProps = state => ({</p>
+      <p>  auth: state.auth,</p>
+      <p>  errors: state.errors</p>
+      <p>});</p>
+
+      <p>export default connect(</p>
+      <p>  mapStateToProps,</p>
+      <p>  { registerUser }</p>
+      <p>)(withRouter(Signup2));</p>
+
+      <h4>do the axios connection to route</h4>
+      <p>// Register User</p>
+      <p>export const registerUser = (userData, history) => dispatch => {</p>
+      <p>  axios</p>
+      <p>    .post("/api/users/register", userData)</p>
       <p>    .then(res => history.push("/login"));</p>
       <p>};</p>
+
     </div>
   </body>
 </html>
