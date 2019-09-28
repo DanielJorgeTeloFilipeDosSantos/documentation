@@ -239,6 +239,29 @@
       <br />
       <p><b>step3: Link the function to input</b></p></p>
       <p>onSubmit={this.onSubmit}</p></p>
+
+      <h4>do the redux reducer,actioncreator,actiontype</h4>
+      <p>import isEmpty from '../validation/is-empty';</p>
+
+      <p>import { SET_CURRENT_USER } from '../actions/types';</p>
+
+      <p>const initialState = {</p>
+      <p>  isAuthenticated: false,</p>
+      <p>  user: {}</p>
+      <p>};</p>
+
+      <p>export default function(state = initialState, action) {</p>
+      <p>  switch (action.type) {</p>
+      <p>    case SET_CURRENT_USER:</p>
+      <p>      return {</p>
+      <p>        ...state,</p>
+      <p>        isAuthenticated: !isEmpty(action.payload),</p>
+      <p>        user: action.payload</p>
+      <p>      };</p>
+      <p>    default:</p>
+      <p>      return state;</p>
+      <p>  }</p>
+      <p>}</p>
     </div>
   </body>
 </html>
