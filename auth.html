@@ -147,8 +147,10 @@
       <p>
         router.get('/', (req, res, next) => { res.json({msg: 'user works'}) });
       </p>
+      <hr />
+      <h3>sign up</h3>
 
-      <h4>sign up</h4>
+      <h4>sign up route</h4>
 
       <p>const bcrypt = require("bcrypt");</p>
       <p>const User = require("../models/users");</p>
@@ -179,6 +181,27 @@
       <p>}</p>
       <p>});</p>
       <p>});</p>
+
+      <h4>do the component</h4>
+
+      <h3>do the state</h3>
+      <p>constructor() {</p>
+      <p>super();</p>
+      <p>this.state = {</p>
+      <p>name: "",</p>
+      <p>email: "",</p>
+      <p>password: "",</p>
+      <p>password2: ""</p>
+      <p>};</p>
+      <p>}</p>
+
+      <h3>Link the input to the state</h3>
+      <p>value={this.state.name}</p>
+
+      <h3>do the onchange</h3>
+      <p>onChange = e => {</p>
+      <p>this.setState({ [e.target.name]: e.target.value });</p>
+      <p>};</p>
     </div>
   </body>
 </html>
