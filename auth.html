@@ -262,6 +262,18 @@
       <p>      return state;</p>
       <p>  }</p>
       <p>}</p>
+      <h4>do the action inside the onSubmit</h4>
+      <p>this.props.registerUser(newUser, this.props.history);</p>
+      <h4>connect component to redux</h4>
+      <p>const mapStateToProps = state => ({</p>
+      <p>  auth: state.auth,</p>
+      <p>  errors: state.errors</p>
+      <p>});</p>
+
+      <p>export default connect(</p>
+      <p>  mapStateToProps,</p>
+      <p>  { registerUser }</p>
+      <p>)(withRouter(Signup2));</p>
     </div>
   </body>
 </html>
