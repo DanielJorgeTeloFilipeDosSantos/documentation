@@ -198,10 +198,47 @@
       <h3>Link the input to the state</h3>
       <p>value={this.state.name}</p>
 
-      <h3>do the onchange</h3>
+      <h3>do the onChange</h3>
+      <p><b>step1: do the function</b></p>
       <p>onChange = e => {</p>
       <p>this.setState({ [e.target.name]: e.target.value });</p>
       <p>};</p>
+      <br />
+      <br />
+      <p><b>step2: bind the function</b></p>
+      <p>this.onChange = this.onChange.bind(this);</p>
+      <br />
+      <br />
+      <p><b>step3: Link the function to input</b></p>
+      <p>onChange={this.onChange}</p>
+
+      <h3>do the onSubmit</h3>
+      <p><b>step1: do the function</b></p>
+
+      <p>onSubmit = e => {</p>
+      <p>  e.preventDefault();</p>
+
+      <p>  const newUser = {</p>
+      <p>    name: this.state.name,</p>
+      <p>    email: this.state.email,</p>
+      <p>    password: this.state.password,</p>
+      <p>    password2: this.state.password2</p>
+      <p>  };</p>
+
+      <p>  console.log(this.state);</p>
+
+      <p>  this.props.registerUser(newUser, this.props.history);</p>
+      <p>  this.props.history.push("/");</p>
+      <p>};</p>
+
+      <br />
+      <br />
+      <p><b>step2: bind the function</b></p></p>
+      <p>this.onSubmit = this.onSubmit.bind(this);</p></p>
+      <br />
+      <br />
+      <p><b>step3: Link the function to input</b></p></p>
+      <p>onSubmit={this.onSubmit}</p></p>
     </div>
   </body>
 </html>
