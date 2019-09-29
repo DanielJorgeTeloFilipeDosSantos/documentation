@@ -262,6 +262,17 @@
       <p>      return state;</p>
       <p>  }</p>
       <p>}</p>
+      <br>
+
+      <h4>do the action creator</h4>
+
+      <p>//-------------------------- AUTH ACTION CREATORS--------------------------------------------</p>
+
+      <p>// Register User</p>
+      <p>export const registerUser = (userData, history) => dispatch => {</p>
+      <p>  axios.post("/users/register", userData).then(res => history.push("/signin"));</p>
+      <p>};</p>
+      <p>//--------------------------------------------------------------------------------------------</p>
       <h4>do the action inside the onSubmit</h4>
       <p>this.props.registerUser(newUser, this.props.history);</p>
       <h4>connect component to redux</h4>
@@ -287,12 +298,12 @@
 
       <h3>sign in with auth</h3>
 
-      <h4>sign up route</h4>
+      <h4>sign in route</h4>
 
       <p>const bcrypt = require("bcrypt");</p>
       <p>const User = require("../models/users");</p>
       <br />
-      <p>router.post("/register", (req, res) => {</p>
+      <p>router.post("/signin", (req, res) => {</p>
       <p>User.findOne({ email: req.body.email }).then(user => {</p>
       <p>if (user) {</p>
       <p>
@@ -404,11 +415,6 @@
 
       <p>//-------------------------- AUTH ACTION CREATORS--------------------------------------------</p>
 
-      <p>// Register User</p>
-      <p>export const registerUser = (userData, history) => dispatch => {</p>
-      <p>  axios.post("/users/register", userData).then(res => history.push("/signin"));</p>
-      <p>};</p>
-      <p>
       <p>// Login - Get User Token</p>
       <p>export const loginUser = userData => dispatch => {</p>
       <p>  axios.post("/api/users/login", userData).then(res => {</p>
