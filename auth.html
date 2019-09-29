@@ -190,8 +190,7 @@
       <p>this.state = {</p>
       <p>name: "",</p>
       <p>email: "",</p>
-      <p>password: "",</p>
-      <p>password2: ""</p>
+      <p>password: ""</p>
       <p>};</p>
       <p>}</p>
 
@@ -298,37 +297,67 @@
 
       <h3>sign in with auth</h3>
 
-      <h4>sign in route</h4>
+      <h4>sign in , login route</h4>
 
-      <p>const bcrypt = require("bcrypt");</p>
-      <p>const User = require("../models/users");</p>
-      <br />
-      <p>router.post("/signin", (req, res) => {</p>
-      <p>User.findOne({ email: req.body.email }).then(user => {</p>
-      <p>if (user) {</p>
+      <p>router.post('/login', (req, res) => {</p>
+      <p>  const { errors, isValid } = validateLoginInput(req.body);</p>
       <p>
-        return res.status(404).json({ email: "email already exists ma man" });
-      </p>
-      <p>} else {</p>
-      <p>const newUser = new User({</p>
-      <p>name: req.body.name,</p>
-      <p>email: req.body.email,</p>
-      <p>password: req.body.password</p>
+      <p>  // Check Validation</p>
+      <p>  if (!isValid) {</p>
+      <p>    return res.status(400).json(errors);</p>
+      <p>  }</p>
+
+      <p>  const email = req.body.email;</p>
+      <p>  const password = req.body.password;</p>
+      <p>
+      <p>  // Find user by email</p>
+      <p>  User.findOne({ email }).then(user => {</p>
+      <p>    // Check for user</p>
+      <p>    if (!user) {</p>
+      <p>      errors.email = 'User not found';</p>
+      <p>      return res.status(404).json(errors);</p>
+      <p>    }</p>
+      <p>
+      <p>    // Check Password</p>
+      <p>    bcrypt.compare(password, user.password).then(isMatch => {</p>
+      <p>      if (isMatch) {</p>
+      <p>        // User Matched</p>
+      <p>        const payload = { id: user.id, name: user.name, avatar: user.avatar }; // Create JWT Payload</p>
+ 
+      <p>        // Sign Token</p>
+      <p>        jwt.sign(</p>
+      <p>          payload,</p>
+      <p>          keys.secretOrKey,</p>
+      <p>          { expiresIn: 3600 },</p>
+      <p>          (err, token) => {</p>
+      <p>            res.json({</p>
+      <p>              success: true,</p>
+      <p>              token: 'Bearer ' + token</p>
+      <p>            });</p>
+      <p>          }</p>
+      <p>        );</p>
+      <p>      } else {</p>
+      <p>        errors.password = 'Password incorrect';</p>
+      <p>        return res.status(400).json(errors);</p>
+      <p>      }</p>
+      <p>    });</p>
+      <p>  });</p>
       <p>});</p>
-      <p></p>
-      <p>bcrypt.genSalt(10, (err, salt) => {</p>
-      <p>bcrypt.hash(newUser.password, salt, (err, hash) => {</p>
-      <p>if (err) throw err;</p>
-      <p>newUser.password = hash;</p>
-      <p>newUser</p>
-      <p>.save()</p>
-      <p>.then(user => res.json(user))</p>
-      <p>.catch(err => console.log(err));</p>
-      <p>});</p>
-      <p>});</p>
-      <p>}</p>
-      <p>});</p>
-      <p>});</p>
+
+      <p>// @route   GET api/users/current</p>
+      <p>// @desc    Return current user</p>
+      <p>// @access  Private</p>
+      <p>router.get(</p>
+      <p>  '/current',</p>
+      <p>  passport.authenticate('jwt', { session: false }),</p>
+      <p>  (req, res) => {</p>
+      <p>    res.json({</p>
+      <p>      id: req.user.id,</p>
+      <p>      name: req.user.name,</p>
+      <p>      email: req.user.email</p>
+      <p>    });</p>
+      <p>  }</p>
+      <p>);</p>
 
       <h3>do the component</h3>
 
@@ -478,7 +507,7 @@
 
       <p>export default connect(</p>
       <p>  mapStateToProps,</p>
-      <p>  { registerUser }</p>
+      <p>  { loginUser }</p>
       <p>)(withRouter(Signup2));</p>
 
       <h4>do the axios connection to route</h4>
