@@ -277,7 +277,7 @@
       <p>this.props.registerUser(newUser, this.props.history);</p>
       <h4>connect component to redux</h4>
       <p>const mapStateToProps = state => ({</p>
-      <p>  auth: state.auth,</p>
+      <p>  auth: state.authReducer,</p>
       <p>  errors: state.errors</p>
       <p>});</p>
 
@@ -400,7 +400,7 @@
 
 
 
-      
+
       <p>import isEmpty from '../validation/is-empty';</p>
 
       <p>import { SET_CURRENT_USER } from '../actions/types';</p>
