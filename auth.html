@@ -399,6 +399,57 @@
       <p>      return state;</p>
       <p>  }</p>
       <p>}</p>
+
+      <h4>do the action creator</h4>
+
+      <p>//-------------------------- AUTH ACTION CREATORS--------------------------------------------</p>
+
+      <p>// Register User</p>
+      <p>export const registerUser = (userData, history) => dispatch => {</p>
+      <p>  axios.post("/users/register", userData).then(res => history.push("/signin"));</p>
+      <p>};</p>
+      <p>
+      <p>// Login - Get User Token</p>
+      <p>export const loginUser = userData => dispatch => {</p>
+      <p>  axios.post("/api/users/login", userData).then(res => {</p>
+      <p>    // Save to localStorage</p>
+      <p>    const { token } = res.data;</p>
+      <p>    // Set token to ls</p>
+      <p>    localStorage.setItem("jwtToken", token);</p>
+      <p>    // Set token to Auth header</p>
+      <p>    setAuthToken(token);</p>
+      <p>    // Decode token to get user data</p>
+      <p>    const decoded = jwt_decode(token);</p>
+      <p>    // Set current user</p>
+      <p>    dispatch(setCurrentUser(decoded));</p>
+      <p>  });</p>
+
+      <p>// Set logged in user</p>
+      <p>export const setCurrentUser = decoded => {</p>
+      <p>  return {</p>
+      <p>    type: SET_CURRENT_USER,</p>
+      <p>    payload: decoded</p>
+      <p>  };</p>
+      <p>};</p>
+
+      <p>// Log user out</p>
+      <p>export const logoutUser = () => dispatch => {</p>
+      <p>  // Remove token from localStorage</p>
+      <p>  localStorage.removeItem("jwtToken");</p>
+      <p>  // Remove auth header for future requests</p>
+      <p>  setAuthToken(false);</p>
+      <p>  // Set current user to {} which will set isAuthenticated to false</p>
+      <p>  dispatch(setCurrentUser({}));</p>
+      <p>};</p>
+      <p>
+      <p>//---------------------------------------------------------------------------------------------------</p>
+
+
+
+
+
+
+
       <h4>do the action inside the onSubmit</h4>
       <p>this.props.registerUser(newUser, this.props.history);</p>
       <h4>connect component to redux</h4>
