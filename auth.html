@@ -518,6 +518,22 @@
       <p>    .then(res => history.push("/login"));</p>
       <p>};</p>
 
+      <h4>create in src/utils</h4>
+      <p>import axios from "axios";</p>
+
+      <p>const setAuthToken = token => {</p>
+      <p>  if (token) {</p>
+      <p>    // Apply to every request</p>
+      <p>    axios.defaults.headers.common["Authorization"] = token;</p>
+      <p>  } else {</p>
+      <p>    // Delete auth header</p>
+      <p>    console.log("delete");</p>
+      <p>    delete axios.defaults.headers.common["Authorization"];</p>
+      <p>  }</p>
+      <p>};</p>
+
+      <p>export default setAuthToken;</p>
+
     </div>
   </body>
 </html>
