@@ -160,10 +160,7 @@
       <p>constructor(){</p>
       <p>super();</p>
       <p>this.state={</p>
-      <p>person:{</p>
-      <p>name:'da',</p>
-      <p>age: 26,</p>
-      <p>profession:'lwtf'</p>
+      <p>person:'da'</p>
       <p>}</p>
       <p>};</p>
       <p>}</p>
@@ -216,12 +213,153 @@
       <hr>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       <h3>Lifecycle methods</h3>
 
-      <p>componentDidMount(){}</p>
-      <p>componentDidUpdate(){}</p>
-      <p>componentWillUnmount(){}</p>
+      <p>componentWillMount() </p>
+      <p>componentDidMount() </p>
+      <p>componentWillReceiveProps() </p>
+      <p>shouldComponentUpdate() </p>
+      <p>componentWillUpdate() </p>
+      <p>componentDidUpdate()</p>
+      <p>componentWillUnmount() </p>
       <hr>
+
+
+
+
+
+
+
+      <h3>Acess innerHtml:</h3>
+      <p>document.getElementById("demo").innerHTML = fruits;</p>
+      <hr>
+
+
+
+
+      
+      <h3>Javascript ES6 main methods:</h3>
+
+      <p>Array.slice()</p>
+      <p>const data = ["Banana", "Orange", "Lemon", "Apple", "Mango"];</p>
+      <p>let specData = data.slice(1, 3);</p>
+      <br>
+
+      <p>Array.splice()</p>
+      <p>----------------------------------- melhorar ------------------------------------------------</p>
+      <br>
+
+      <p>Array.sort()</p>
+      <p>var fruits = ["Banana", "Orange", "Apple", "Mango"];</p>
+      <p>fruits.sort();</p>
+      <br>
+      
+      <p>Array.shift()</p>
+      <p>var array1 = [1, 2, 3];</p>
+      <p>var firstElement = array1.shift();</p>
+      <p>console.log(array1);</p>
+      <p>// expected output: Array [2, 3]</p>
+      <p>console.log(firstElement);</p>
+      <p>// expected output: 1</p>
+      <br>
+
+      <p>Array.unshift()</p>
+      <p>var arr = [1, 2];</p>
+      <p>arr.unshift(0); // result of call is 3, the new array length</p>
+      <p>// arr is [0, 1, 2]</p>
+      <p>arr.unshift(-2, -1); // = 5</p>
+      <p>// arr is [-2, -1, 0, 1, 2]</p>
+      <p>arr.unshift([-3]);</p>
+      <p>// arr is [[-3], -2, -1, 0, 1, 2]</p>
+      <br>
+
+      <p>Array.map()</p>
+      <p>var numbers = [1, 4, 9];</p>
+      <p>var roots = numbers.map(Math.sqrt);</p>
+      <p>// roots é [1, 2, 3], numbers ainda é [1, 4, 9]</p>
+      <br>
+
+      <p>Array.filter()</p>
+      <p>var words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];</p>
+      <p>const result = words.filter(word => word.length > 6);</p>
+      <p>console.log(result);</p>
+      <p>// expected output: Array ["exuberant", "destruction", "present"]</p>
+      <br>
+
+
+
+
+
+      <p>Array.reduce()</p>
+      <p>const array1 = [1, 2, 3, 4];</p>
+      <p>const reducer = (accumulator, currentValue) => accumulator + currentValue;</p>
+      <p>// 1 + 2 + 3 + 4</p>
+      <p>console.log(array1.reduce(reducer));</p>
+      <p>// expected output: 10</p>
+      <p>// 5 + 1 + 2 + 3 + 4</p>
+      <p>console.log(array1.reduce(reducer, 5));</p>
+      <p>// expected output: 15</p>
+      <br>
+
+
+      <p>.reverse()</p>
+      <p>.join(''); </p>
+      <p>Array.push()</p>
+      <p>.replace()</p>
+      
+      
+      
+      
+      
+      
+      
+      
+      <p>some()</p>
+      <p>every()</p>
+      <p>for…of iterator</p>
+      <br>
+      <p>... </p>
+      <br>
+      
+      <p>String.startsWith()</p>
+      <p>String.endsWith()</p>
+      <p>String.includes()</p>
+      <p>String.indexOf()</p>
+      
+      <p>String.split()</p>
+      <p>var str = "How are you doing today?";</p>
+      <p>var res = str.split(" ")</p>
+      <p>console.log(res)</p>
+      <br>
+      
+      <p>parseInt</p>
+      <p>node.js asycrons option</p>
+      
+      
+      
+
+
+
+
+
+
 
       <h4>toggle</h4>
       <p>make the state {form: true}</p>
